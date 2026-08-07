@@ -1,42 +1,43 @@
 # Customer Churn Prediction Pipeline 📊
 
-## Projenin Amacı:
+## Project Overview
 
-Bu projenin temel amacı, müşteri davranışlarına ait verileri analiz ederek şirketi terk etme (churn) riski taşıyan müşterileri makine öğrenmesi algoritmalarıyla önceden tahmin etmektir. 
+The goal of this project is to analyze customer behavior data and predict, using machine learning, which customers are at risk of churning (i.e., leaving the company).
 
-Proje kapsamında veri ön işleme, eksik veri yönetimi, öznitelik mühendisliği (feature engineering) ve ölçekleme adımlarından oluşan uçtan uca bir makine öğrenmesi boru hattı (pipeline) kurulmuştur. Tahminleme için **Lojistik Regresyon** ve **K-Nearest Neighbors (KNN)** algoritmaları eğitilmiş ve performansları karşılaştırılmıştır.
+The project implements an end-to-end machine learning pipeline covering data preprocessing, missing value handling, outlier detection, feature engineering, and feature scaling. Two classification algorithms — **Logistic Regression** and **K-Nearest Neighbors (KNN)** — were trained and their performances compared.
 
-## Repository İçeriği:
+## Repository Contents
 
-- `churn_prediction.py`: Veri işleme, model eğitimi ve değerlendirme adımlarını içeren ana Python betiği.
-- `musteri_veri_seti.csv`: Modellerin eğitildiği ve test edildiği müşteri veri seti.
-- `requirements.txt`: Projenin bağımlılıklarını ve kütüphane sürümlerini içeren dosya.
-- `README.md`: Proje dokümantasyonu.
+- `churn_prediction.py`: Main Python script containing data processing, model training, and evaluation steps.
+- `musteri_veri_seti.csv`: Customer dataset used for training and testing the models.
+- `requirements.txt`: File listing the project's dependencies and library versions.
+- `README.md`: Project documentation.
 
-## Nasıl Çalıştırılır?
+## How to Run
 
-Projeyi kendi yerel ortamınızda (local) çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
+To run this project in your local environment, follow the steps below:
 
-1. **Repoyu Klonlayın veya İndirin:**
-   Proje dosyalarını bilgisayarınıza indirin ve terminal üzerinden dosya dizinine (klasöre) gidin.
+1. **Clone or Download the Repository:**
+   Download the project files to your machine and navigate to the project directory via terminal.
 
-2. **Gerekli Kütüphaneleri Yükleyin:**
-   Modelin çalışması için gereken bağımlılıkları tek seferde kurmak için şu komutu çalıştırın:
+2. **Install Required Libraries:**
+   Install all dependencies at once by running:
    ```bash
    pip install -r requirements.txt
    ```
-3. **Projeyi Çalıştırın**
-   Ortam hazırlandıktan sonra ana script'i çalıştırarak tüm pipeline'ı başlatabilirsiniz:
+3. **Run the Project**
+   Once the environment is set up, run the main script to execute the full pipeline:
    ```bash
    python churn_prediction.py
    ```
 
-## Sonuç ve Değerlendirme Özeti
+## Results and Evaluation Summary
 
-* **Model Seçimi:** Yapılan validasyon testleri sonucunda; Lojistik Regresyon modeli (%90.4), KNN modeline (%84.9) göre daha yüksek genelleme başarısı göstermiş ve nihai test modeli olarak seçilmiştir.
-* **Sınıf Dengesizliği Etkisi:** Seçilen Lojistik Regresyon modelinin test verisi üzerindeki metrikleri incelendiğinde, sistemde kalmaya devam eden müşterileri (Churn=0) tahmin etmede mükemmel bir performans sergilediği görülmüştür.
-* **Çıkarım:** Buna karşın, ayrılan müşterileri (Churn=1) yakalama oranı (Recall) %52 seviyesinde kalmıştır. Bu durumun algoritmanın yetersizliğinden değil, veri setindeki belirgin sınıf dengesizliğinden (334 Kalan vs. 166 Ayrılan) kaynaklandığı tespit edilmiştir.
-* **Gelecek Çalışmalar:** Bir sonraki aşamada sentetik veri üretme (SMOTE) veya ağırlıklandırılmış sınıflandırma (Class Weights) teknikleri kullanılarak azınlık sınıfına ait Recall (Duyarlılık) değerinin artırılması hedeflenmektedir.
+* **Model Selection:** Based on validation results, the Logistic Regression model (90.4% accuracy) outperformed the KNN model (84.9% accuracy) in terms of generalization performance and was therefore selected as the final model.
+* **Test Performance:** The selected Logistic Regression model achieved 80.8% accuracy on the unseen test set.
+* **Class Imbalance Effect:** When examining the test set metrics of the selected Logistic Regression model, it performed excellently at identifying customers who remain with the company (Churn = 0).
+* **Key Finding:** In contrast, the recall for churned customers (Churn = 1) was 52%. This is attributed not to a weakness in the algorithm itself, but to the notable class imbalance in the dataset (334 retained vs. 166 churned).
+* **Future Work:** In future iterations, techniques such as synthetic data generation (SMOTE) or weighted classification (class weights) could be applied to improve the recall for the minority (churned) class.
 
 ---
-**Geliştirici:** Samet Ozan Topcu
+**Developer:** Samet Ozan Topcu
