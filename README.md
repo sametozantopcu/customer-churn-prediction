@@ -36,7 +36,7 @@ To run this project in your local environment, follow the steps below:
 * **Model Selection:** Based on validation results, the Logistic Regression model (90.4% accuracy) outperformed the KNN model (84.9% accuracy) in terms of generalization performance and was therefore selected as the final model.
 * **Test Performance:** The selected Logistic Regression model achieved 80.8% accuracy on the unseen test set.
 * **Class Imbalance Effect:** When examining the test set metrics of the selected Logistic Regression model, it performed excellently at identifying customers who remain with the company (Churn = 0).
-* **Key Finding:** In contrast, the recall for churned customers (Churn = 1) was 52%. This is attributed not to a weakness in the algorithm itself, but to the notable class imbalance in the dataset (334 retained vs. 166 churned).
+* **Key Finding:** In contrast, the recall for churned customers (Churn = 1) was 52%. This is attributed not to a weakness in the algorithm itself, but to the notable class imbalance in the dataset (332 retained vs. 154 churned).
 * **Future Work:** In future iterations, techniques such as synthetic data generation (SMOTE) or weighted classification (class weights) could be applied to improve the recall for the minority (churned) class.
 
 ---
