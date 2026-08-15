@@ -40,4 +40,9 @@ To run this project in your local environment, follow the steps below:
 * **Future Work:** In future iterations, techniques such as synthetic data generation (SMOTE) or weighted classification (class weights) could be applied to improve the recall for the minority (churned) class.
 
 ---
-**Developer:** Samet Ozan Topcu
+## 👤 Author
+
+**Samet Ozan Topcu**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/samet-ozan-topcu-4328003a0/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sametozantopcu)
