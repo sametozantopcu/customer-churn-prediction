@@ -1,6 +1,6 @@
 # Customer Churn Prediction Pipeline 📊
 
-## Project Overview
+## Project Overview 
 
 The goal of this project is to analyze customer behavior data and predict, using machine learning, which customers are at risk of churning (i.e., leaving the company).
 
